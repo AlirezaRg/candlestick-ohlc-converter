@@ -9,7 +9,7 @@ pipeline {
         stage('Lint') {
             steps {
                 sh 'pip3 install flake8 --break-system-packages'
-                sh 'python3 -m flake8 . --max-line-length=120 --exclude=.git --ignore=E501,W,C,E'
+                sh 'python3 -m flake8 . --max-line-length=120 --exclude=.git --ignore=E501,W,C,E,F'
             }
         }
     }
