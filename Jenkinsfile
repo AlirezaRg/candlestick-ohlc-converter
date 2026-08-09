@@ -3,12 +3,12 @@ pipeline {
     stages {
         stage('Install') {
             steps {
-                sh 'pip3 install -r requirements.txt'
+                sh 'pip3 install -r requirements.txt --break-system-packages'
             }
         }
         stage('Lint') {
             steps {
-                sh 'pip3 install flake8'
+                sh 'pip3 install flake8 --break-system-packages'
                 sh 'flake8 . --max-line-length=120 --exclude=.git --ignore=E501'
             }
         }
